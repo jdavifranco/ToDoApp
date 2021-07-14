@@ -1,5 +1,6 @@
 package com.jdavifranco.ufop.todolist.model
 
+import androidx.room.ColumnInfo
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -8,7 +9,7 @@ Data class são classes criadas com o único objetivo de guardar dados, nesse ca
 os dados das tarefas.
 A data classe task define apenas as propriedades da tarefa e um construtor
  */
-@Entity(tableName = "tableTasks")
+@Entity(tableName = "task_table")
 data class Task(
     @PrimaryKey
     val name:String,

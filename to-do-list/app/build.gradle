@@ -7,16 +7,21 @@ plugins {
 }
 
 android {
+    android {
+        // ...
+        testOptions {
+            unitTests.includeAndroidResources = true
+        }
+    }
     compileSdkVersion 30
     buildToolsVersion "30.0.3"
 
     defaultConfig {
         applicationId "com.jdavifranco.ufop.todolist"
         minSdkVersion 21
-        targetSdkVersion 30
+        targetSdkVersion 29
         versionCode 1
         versionName "1.0"
-
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
 
@@ -53,7 +58,7 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$version_lifecycle"
 
     // Annotation processor
-    //kapt "androidx.lifecycle:lifecycle-compiler:$version_lifecycle"
+    kapt "androidx.lifecycle:lifecycle-compiler:$version_lifecycle"
     // alternately - if using Java8, use the following instead of lifecycle-compiler
     implementation "androidx.lifecycle:lifecycle-common-java8:$version_lifecycle"
 
@@ -75,11 +80,14 @@ dependencies {
 
     //ROOm
     implementation "androidx.room:room-runtime:$version_room"
-
-    // To use Kotlin annotation processing tool (kapt)
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     kapt "androidx.room:room-compiler:$version_room"
-    // To use Kotlin Symbolic Processing (KSP)
-    //ksp "androidx.room:room-compiler:$version_room"
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    //Roboletric para testes
+    testImplementation 'org.robolectric:robolectric:4.4'
+    // Optional -- Robolectric environment
+    testImplementation 'androidx.test:core:1.4.0'
 
     // optional - Kotlin Extensions and Coroutines support for Room
     implementation "androidx.room:room-ktx:$version_room"
@@ -88,6 +96,11 @@ dependencies {
     implementation "com.google.android.material:material:$version_material"
     implementation "androidx.constraintlayout:constraintlayout:$version_constraint_layout"
     testImplementation "junit:junit:$version_junit"
+
     androidTestImplementation "androidx.test.ext:junit:$version_androidxJunit"
     androidTestImplementation "androidx.test.espresso:espresso-core:$version_espresso"
+    androidTestImplementation 'androidx.test:runner:1.1.0'
+    androidTestUtil 'androidx.test:orchestrator:1.1.0'
+
+
 }

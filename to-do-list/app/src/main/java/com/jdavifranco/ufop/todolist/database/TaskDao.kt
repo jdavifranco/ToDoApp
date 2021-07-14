@@ -30,6 +30,9 @@ interface TaskDao {
     A anotação @Query serve para definir uma consulta mais específica ao banco de dados
     Utilizando linguagem SQL
      */
-    @Query("SELECT * FROM tableTasks")
+    @Query("SELECT * FROM task_table")
     fun getAllTasks():LiveData<List<Task>>
+
+    @Query("SELECT * FROM task_table WHERE name = :Id")
+    fun getTaskbyName(Id:String):Task
 }
