@@ -25,7 +25,7 @@ interface TaskDao {
     Com a anotação @Insert posso definir que essa função que adiciona uma task ao banco de dados
      */
     @Insert
-    fun insert(task: Task)
+    suspend fun insert(task: Task)
     /*
     A anotação @Query serve para definir uma consulta mais específica ao banco de dados
     Utilizando linguagem SQL
@@ -37,5 +37,5 @@ interface TaskDao {
     fun getTaskbyName(Id:String):Task
 
     @Query("DELETE FROM task_table")
-    fun deleteAll()
+    suspend fun deleteAll()
 }
