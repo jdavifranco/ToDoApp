@@ -17,3 +17,5 @@ uma onde é exibida uma lista das atividades criadas e outra onde é possível c
 ##### Principais bibliotecas utilizadas
 *Room, Lifecyle, Livedata and DataBinding*
 
+##### Screenshots do To Do App
+<img src="https://github.com/jdavifranco/meusProjetosAndroid/blob/main/to-do-list/snapshots/telainicial.jpeg" width="23%"></img> <img src="https://github.com/jdavifranco/meusProjetosAndroid/blob/main/to-do-list/snapshots/telaAddTask.jpeg" width="23%"></img> <img src="https://github.com/jdavifranco/meusProjetosAndroid/blob/main/to-do-list/snapshots/TelaFinal.jpeg" width="23%"></img> 
