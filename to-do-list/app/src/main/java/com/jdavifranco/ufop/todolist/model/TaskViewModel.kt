@@ -15,7 +15,7 @@ e fazer operações sobre esses dados
 class TaskViewModel(val database: TaskDao) : ViewModel() {
 
 
-    fun getTasks() = database.getAllTasks()
+    val tasks = database.getAllTasks()
 
      fun insertTask(task:Task){
         viewModelScope.launch {

@@ -38,7 +38,6 @@ class CriarTaskActivity : AppCompatActivity() {
                 hour = binding.tilHour.text
             )
             viewModel.insertTask(task)
-            Log.e("insert task", "true")
             finish()
         }
 

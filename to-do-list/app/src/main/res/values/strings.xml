@@ -1,9 +1,7 @@
 <resources>
     <string name="extended_fab">Criar Tarefa</string>
     <string name="extended_fab_description">Botão para criar tarefa</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="app_name">TO DO</string>
+    <string name="app_name">TO DO App</string>
     <string name="label_new_task">Criar Tarefa</string>
     <string name="label_title">Título</string>
     <string name="label_date">Data</string>

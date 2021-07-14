@@ -21,7 +21,9 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        // datasource guarda uma referencia para o banco de dados
         val dataSource = TaskDatabase.getInstance(applicationContext).taskDao
+        // ViewModelFactory que permite passar TaskDao como paramentro para o viewModel
         val factory = TaskViewModelFactory(dataSource)
         taskViewModel =
             ViewModelProvider(
@@ -30,14 +32,23 @@ class MainActivity : AppCompatActivity() {
         adapterTasks = TaskAdapter()
         binding.rvTasks.adapter = adapterTasks
         binding.lifecycleOwner = this
-        taskViewModel.getTasks().observe(this, Observer {
+        /*
+        Utilizando LiveData é possível manter a lista sempre atualizada com
+        os valores mais recentes.
+         */
+        /*
+        Adicono um observer para a função getTasks que retorna um objeto
+         */
+        taskViewModel.tasks.observe(this, Observer {
                 it.let {
                     if (it.size>0){
+                        binding.includeEmpty.visibility = View.GONE
                         binding.rvTasks.visibility = View.VISIBLE
 
                     }
                     else{
                         binding.rvTasks.visibility = View.GONE
+                        binding.includeEmpty.visibility = View.VISIBLE
                     }
                     adapterTasks.submitList(it)
                 }
@@ -54,9 +65,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    override fun onDestroy() {
-        super.onDestroy()
-
-    }
 }
 
