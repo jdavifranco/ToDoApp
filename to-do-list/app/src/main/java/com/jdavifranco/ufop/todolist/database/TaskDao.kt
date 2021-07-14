@@ -35,4 +35,7 @@ interface TaskDao {
 
     @Query("SELECT * FROM task_table WHERE name = :Id")
     fun getTaskbyName(Id:String):Task
+
+    @Query("DELETE FROM task_table")
+    fun deleteAll()
 }
