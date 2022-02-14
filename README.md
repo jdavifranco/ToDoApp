@@ -1,11 +1,4 @@
-# Projetos Android
-Apps criados durante cursos, bootcamps ou por conta própria.
-
-# Contéudo
-Cada projeto desse repositório possui exemplos de uso de componentes e bibliotecas android comentados.
-
-# Projetos
-## 📔 To Do App
+# 📔 To Do App
 #### Projeto desenvolvido durante o Santander Bootcamp | Mobile Developer da DIO - Digital Innovation One
 ##### *Foram adicionadas melhorias de persistência de dados em relação a proposta inicial do bootcamp*
 ###### DESCRIÇÃO
